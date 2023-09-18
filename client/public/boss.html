@@ -1,14 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bosses</title>
-    <script defer src="/scripts/header.js"></script>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Elden Ring Bosses</title>
+    <meta name="description" content="Built with Pico CSS." />
+    <link
+      rel="shortcut icon"
+      href="https://pixeljoint.com/files/icons/eldenring_characters_pjicon.png"
+    />
+    <link rel="canonical" href="https://picocss.com/examples/company/" />
+
+    <!-- Pico.css -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css"
+    />
+
+    <!-- Custom styles for this example -->
+    <link rel="stylesheet" href="custom.css" />
+
+    <!-- SCRIPTS -->
+    <script defer src="/scripts/bosses.js"></script>
     <script defer src="/scripts/boss.js"></script>
-</head>
+  </head>
+  
 <body>
-    <header></header>
+    <!-- Hero -->
+    <div class="hero">
+      <header class="container">
+        <hgroup>
+          <h1 id="title">Elden Ring Bosses</h1>
+          <h6 id="subtitle">All information for Elden Ring Bosses</h6>
+          <img
+            src="https://pixeljoint.com/files/icons/full/eldenring_characters.png"
+            id="hero-pixel-art"
+            alt="elden ring bosses pixel art"
+          />
+        </hgroup>
+        <p>
+          <a
+            href="/"
+            role="button"
+            id="home-button"
+            >View all Bosses</a
+          >
+        </p>
+      </header>
+    </div>
+    <!-- ./ Hero -->
     <main id="boss-content" class="boss-info">
         <div class="image-container">
             <img src="" alt="boss image" id="image">
