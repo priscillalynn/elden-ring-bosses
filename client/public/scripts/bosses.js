@@ -30,7 +30,7 @@ const renderBosses = async () => {
       bottomContainer.appendChild(type);
 
       const link = document.createElement("a");
-      link.textContent = "Read More >";
+      link.textContent = "Info";
       link.setAttribute("role", "button");
       link.href = `/bosses/${boss.id}`;
       bottomContainer.appendChild(link);

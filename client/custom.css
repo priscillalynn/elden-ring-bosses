@@ -1,65 +1,115 @@
 #title {
-    color: black;
-    font-size: 50px;
-    text-align: center;
+  color: black;
+  font-size: 50px;
+  text-align: center;
 }
 
 #subtitle {
-    color: black;
-    font-size: 15px;
-    text-align: center;
+  color: black;
+  font-size: 15px;
+  text-align: center;
 }
 
 .hero {
-    background-image: url("https://4kwallpapers.com/images/wallpapers/elden-ring-pc-games-playstation-4-playstation-5-xbox-one-3440x1440-7712.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding: 50px;
+  background-image: url("https://4kwallpapers.com/images/wallpapers/elden-ring-pc-games-playstation-4-playstation-5-xbox-one-3440x1440-7712.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 50px;
 }
 
 body {
-    font-family: "Spectral",'fallback', Helvetica, Arial, sans-serif;
-    background-color: rgb(26, 27, 32);
+  font-family: "Spectral", "fallback", Helvetica, Arial, sans-serif;
+  background-color: rgb(26, 27, 32);
 }
 
 #hero-pixel-art {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    height: 70px;
-    width: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 70px;
+  width: auto;
 }
 
 #home-button {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 20%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20%;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px;
+}
+
+.card {
+  border: 1px solid #ccc;
+  margin: 10px;
+  padding: 10px;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card__img {
+  max-width: 100%;
+}
+
+.card__content {
+  padding: 10px;
+}
+
+.card__header {
+  font-size: 20px;
+  margin: 0;
+  color: #007bff;
+}
+
+.card__text {
+  font-size: 14px;
+}
+
+.card__btn {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
 }
 
 /* 404 Page CSS */
-.fof-container{
-    display: table;
-    width: 100%;
-    height: 100vh;
-    text-align: center;
-    color: black;
+.fof-container {
+  display: table;
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  color: black;
 }
 
 .fof {
-    display: table-cell;
-    vertical-align: middle;
+  display: table-cell;
+  vertical-align: middle;
 }
 
 .fof h1 {
-    color: whitesmoke;
-    font-size: 50px;
-    display: inline-block;
-    padding-right: 12px;
-    animation: type .6s alternate infinite;
+  color: whitesmoke;
+  font-size: 50px;
+  display: inline-block;
+  padding-right: 12px;
+  animation: type 0.6s alternate infinite;
 }
 
 @keyframes type {
-    from {box-shadow: inset -3px 0px 0px #888;}
-    to {box-shadow: inset -3px 0px 0px transparent;}
+  from {
+    box-shadow: inset -3px 0px 0px #888;
+  }
+  to {
+    box-shadow: inset -3px 0px 0px transparent;
+  }
 }
