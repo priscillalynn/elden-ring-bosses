@@ -30,7 +30,7 @@ const renderBosses = async () => {
       bottomContainer.appendChild(type);
 
       const link = document.createElement("a");
-      link.textContent = "Read More >";
+      link.textContent = "Info";
       link.setAttribute("role", "button");
       link.href = `/bosses/${boss.id}`;
       bottomContainer.appendChild(link);
@@ -48,6 +48,10 @@ const renderBosses = async () => {
 };
 
 const requestedUrl = window.location.href.split("/").pop();
+console.log(
+  `Background Image URL for ${boss.name}: ${topContainer.style.backgroundImage}`
+);
+
 
 if (requestedUrl) {
   window.location.href = "../404.html";
