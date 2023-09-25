@@ -48,9 +48,6 @@ const renderBosses = async () => {
 };
 
 const requestedUrl = window.location.href.split("/").pop();
-console.log(
-  `Background Image URL for ${boss.name}: ${topContainer.style.backgroundImage}`
-);
 
 
 if (requestedUrl) {

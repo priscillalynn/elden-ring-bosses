@@ -3,8 +3,8 @@ const renderBoss = async () => {
 
   const response = await fetch("/bosses");
   const data = await response.json();
-  const bossContent = document.getElementById("boss-content");
-  let boss = data.find((boss) => boss.id === requestedID);
+
+  const boss = data.find((boss) => boss.id === requestedID);
 
   if (boss) {
     document.getElementById("image").src = boss.image;
@@ -15,6 +15,7 @@ const renderBoss = async () => {
     document.getElementById("lore").textContent = boss.lore;
     document.title = `Elden Ring Bosses - ${boss.name}`;
   } else {
+    const bossContent = document.getElementById("boss-content");
     const message = document.createElement("h2");
     message.textContent = "No Boss Found 😞";
     bossContent.appendChild(message);

@@ -43,15 +43,20 @@ const renderBosses = async () => {
   } else {
     const message = document.createElement("h2");
     message.textContent = "No Bosses Found 😞";
-    mainContent.appendChild(message);
+    mainContent.appendChild(message);    
   }
 };
 
-const requestedUrl = window.location.href.split("/").pop();
+const requestedUrl = window.location.href;
+const bossIdRegex = /\/bosses\/(\d+)/; // This regex matches URLs like "/bosses/123", where "123" is the boss ID.
 
+const bossIdMatch = requestedUrl.match(bossIdRegex);
 
-if (requestedUrl) {
-  window.location.href = "../404.html";
+if (bossIdMatch) {
+  // A boss ID is present in the URL, so render the boss's information
+  renderBosses();
 } else {
+  // No boss ID is present in the URL, so it's not a specific boss page; you can handle this as needed.
+  // For example, you can display a list of all bosses or a homepage.
   renderBosses();
 }

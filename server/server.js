@@ -1,8 +1,10 @@
 import express from 'express';
+import dotenv from "dotenv";
 import bossRouter from './routes/bosses.js';
 
-const app = express();
+dotenv.config();
 
+const app = express();
 
 app.use('/public', express.static('./public'));
 app.use('/scripts', express.static('./public/scripts'));
