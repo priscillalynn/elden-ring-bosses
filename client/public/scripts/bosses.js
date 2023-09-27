@@ -14,8 +14,19 @@ const renderBosses = async () => {
 
       const bottomContainer = document.createElement("div");
       bottomContainer.classList.add("bottom-container");
+    
+      /*
+      another way to display the image in card
+      const image = document.createElement("img");
+      image.src = boss.image;
+      image.alt = boss.name;
+      backgroundImage.appendChild(image);
+      topContainer.appendChild(backgroundImage);
+      */
 
-      topContainer.style.backgroundImage = `url(${boss.image})`;
+      card.style.backgroundImage = `url(${boss.image})`;
+      card.style.backgroundSize = "cover";
+      card.style.backgroundPosition = "center";      
 
       const name = document.createElement("h3");
       name.textContent = boss.name;
@@ -25,9 +36,9 @@ const renderBosses = async () => {
       health.textContent = "Health: " + boss.health;
       bottomContainer.appendChild(health);
 
-      const type = document.createElement("p");
-      type.textContent = "Type: " + boss.type;
-      bottomContainer.appendChild(type);
+      const defense = document.createElement("p");
+      defense.textContent = "Defense: " + boss.defense;
+      bottomContainer.appendChild(defense);
 
       const link = document.createElement("a");
       link.textContent = "Info";

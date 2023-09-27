@@ -51,18 +51,12 @@ body {
   width: 300px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.2s;
+  background-color: black;
+  opacity: 0.8;
 }
 
 .card:hover {
   transform: scale(1.05);
-}
-
-.card__img {
-  max-width: 100%;
-}
-
-.card__content {
-  padding: 10px;
 }
 
 .card__header {
@@ -81,6 +75,27 @@ body {
   border: none;
   padding: 5px 10px;
   cursor: pointer;
+}
+
+#title {
+  color: #ffffff;
+}
+
+#subtitle {
+  color: #ffffff;
+}
+
+h3 {
+  color: #ecd019;
+}
+
+p {
+  color: #ffffff;
+}
+
+a[role="button"] {
+    padding: 5px 15px;
+    border: none;
 }
 
 /* 404 Page CSS */
@@ -112,4 +127,61 @@ body {
   to {
     box-shadow: inset -3px 0px 0px transparent;
   }
+}
+
+
+
+
+
+/* styles.css */
+
+/* Style for the main content */
+.boss-info {
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+/* Style for the image container */
+.image-container {
+    display: flex;
+    align-items: center;
+}
+
+/* Style for the boss image */
+#boss-image {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    margin-right: 20px; /* Adjust spacing as needed */
+}
+
+/* Style for boss details */
+.boss-details {
+    flex-grow: 1; /* Expand to fill remaining space */
+}
+
+/* Style for boss name */
+#name {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Style for other boss attributes (health, defense, type) */
+#health, #defense, #type {
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+/* Style for boss lore */
+#lore {
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/* Style for boss description */
+#description {
+    font-size: 14px;
+    margin-top: 10px;
 }

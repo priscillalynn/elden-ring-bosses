@@ -17,6 +17,7 @@ const renderBoss = async () => {
   } else {
     const bossContent = document.getElementById("boss-content");
     const message = document.createElement("h2");
+    message.classList.add("no-boss-found");
     message.textContent = "No Boss Found 😞";
     bossContent.appendChild(message);
   }
