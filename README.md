@@ -4,7 +4,10 @@ Submitted by: **Priscilla Colon**
 
 About this web app: **This website displays data showing information on Elden Ring bosses.**
 
-Time spent: **10** hours
+Time spent: **14** hours
+
+## Screenshot (WIP)
+
 
 ## Required Features
 
