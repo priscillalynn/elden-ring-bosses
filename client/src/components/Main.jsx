@@ -1,9 +1,9 @@
-import React from 'react'
-
 const Main = () => {
   return (
-    <div>Main</div>
-  )
-}
+    <div className="p-28">
+      <h2>Boss cards will render here</h2>
+    </div>
+  );
+};
 
-export default Main
+export default Main;
