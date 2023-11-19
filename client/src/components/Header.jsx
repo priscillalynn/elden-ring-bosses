@@ -15,9 +15,8 @@ const Header = () => {
       <a href="#" className="text-4xl font-extrabold">
         Elden Ring Bosses
       </a>
-      <h6>
-        For when you're tired of dying to them <span>💀</span>
-      </h6>
+      <h6>A catalogue of high-level enemies to encounter!</h6>
+      {/* <h6>For when you're tired of dying to them <span>💀</span></h6> */}
     </div>
   );
 };
