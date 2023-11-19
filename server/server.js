@@ -5,9 +5,8 @@ import bossRouter from './routes/bosses.js';
 dotenv.config();
 
 const app = express();
+const PORT = process.env.PORT || 3001;
 
-app.use('/public', express.static('./public'));
-app.use('/scripts', express.static('./public/scripts'));
 app.use('/bosses', bossRouter);
 
 app.get('/', (req, res) => {
@@ -17,9 +16,6 @@ app.get('/', (req, res) => {
       '<h1 style="text-align: center; margin-top: 50px;">Elden Ring Bosses API</h1>'
     );
 });
-
-
-const PORT = process.env.PORT || 3001;
 
 app.listen(PORT, () => {
   console.log(`🚀 Server listening on http://localhost:${PORT}`);
