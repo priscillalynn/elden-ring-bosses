@@ -7,6 +7,7 @@ About this web app: **This website displays data showing information on Elden Ri
 Time spent: **14** hours
 
 ## Screenshot (WIP)
+<img width="1370" alt="Screenshot 2023-11-19 at 12 54 47 PM" src="https://github.com/priscillalynn/elden-ring-bosses/assets/85073401/fbb18d36-ab36-4bd2-a8cd-fd74b4718057">
 
 
 ## Required Features
