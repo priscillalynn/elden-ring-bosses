@@ -6,7 +6,7 @@ const bosses = [
     defense: "103",
     type: "optional",
     image:
-      "https://static.wikia.nocookie.net/eldenring/images/d/d0/ER_Margit_Boss.png/revision/latest?cb=20230627194208",
+      "https://64.media.tumblr.com/1720b685c0b978ee21f9e63d86016baf/cd7eb51e936ba020-4e/s1280x1920/d5acac8438c19a7b638a9aa846a0c23b6f834814.gifv",
     lore: "Margit is an Omen who gained notoriety during The Shattering, in which he slaughtered countless champions who harbored ambitions for Lordship, stacking high their corpses during the Second Defense of Leyndell.",
   },
   {
