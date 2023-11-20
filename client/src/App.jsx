@@ -5,6 +5,7 @@ import Main from "./components/Main";
 import Footer from "./components/Footer";
 import "./styles/index.css";
 import "./styles/App.css";
+import BossDetails from "./components/BossDetails";
 
 function App() {
   const element = useRoutes([
@@ -12,6 +13,10 @@ function App() {
       path: "*",
       element: <PageNotFound />,
     },
+    {
+      path: "/BossDetails",
+      element: <BossDetails />,
+    }
   ]);
 
   return (

@@ -2,13 +2,12 @@ import React from "react";
 import {
   Button,
   Card,
-  CardHeader,
-  CardBody,
   CardFooter,
   Image,
 } from "@nextui-org/react";
 
 const BossCard = ({ boss }) => {
+
   return (
     <Card
       radius="lg"
