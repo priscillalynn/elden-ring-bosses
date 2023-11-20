@@ -12,11 +12,10 @@ const Header = () => {
 
   return (
     <div className="text-white p-32" style={headerStyle}>
-      <a href="#" className="text-4xl font-extrabold">
+      <a href="/" className="text-4xl font-extrabold">
         Elden Ring Bosses
       </a>
       <h6>A catalogue of high-level enemies to encounter!</h6>
-      {/* <h6>For when you're tired of dying to them <span>💀</span></h6> */}
     </div>
   );
 };
