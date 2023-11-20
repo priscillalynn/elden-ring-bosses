@@ -1,13 +1,8 @@
 import React from "react";
-import {
-  Button,
-  Card,
-  CardFooter,
-  Image,
-} from "@nextui-org/react";
+import { Link } from "react-router-dom";
+import { Button, Card, CardFooter, Image } from "@nextui-org/react";
 
 const BossCard = ({ boss }) => {
-
   return (
     <Card
       radius="lg"
@@ -21,15 +16,18 @@ const BossCard = ({ boss }) => {
       />
       <CardFooter className="justify-end text-white before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)]">
         <p className="z-10 mr-5 text-center font-bold">{boss.name}</p>
-        <Button
-          className="text-tiny text-white bg-black/30 z-10"
-          variant="flat"
-          color="default"
-          radius="lg"
-          size="md"
-        >
-          View
-        </Button>
+        {/*<Link to={`/boss/${boss.id}`}>*/}
+        <Link to={"/BossDetails"}>
+          <Button
+            className="text-tiny text-white bg-black/30 z-10"
+            variant="flat"
+            color="default"
+            radius="lg"
+            size="md"
+          >
+            View
+          </Button>
+        </Link>
       </CardFooter>
     </Card>
   );
