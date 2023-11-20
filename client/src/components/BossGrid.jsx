@@ -5,7 +5,7 @@ const BossGrid = () => {
   const [bosses, setBosses] = useState([]);
 
   useEffect(() => {
-    // Fetch data from your backend API endpoint
+    // Fetch data from the backend API endpoint
     fetch("/bosses")
       .then((response) => response.json())
       .then((data) => setBosses(data))
@@ -21,4 +21,4 @@ const BossGrid = () => {
   );
 };
 
-export default BossGrid
+export default BossGrid;
