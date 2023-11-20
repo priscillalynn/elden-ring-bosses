@@ -3,6 +3,7 @@ import { Input, Select, SelectItem } from "@nextui-org/react";
 import { RouteOff, Search } from "lucide-react";
 import { useQuery, useQueryClient } from "react-query";
 
+/* FILTERS */
 const Main = () => {
   const bossTypes = ["All", "Major", "Minor"];
 
@@ -25,6 +26,8 @@ const Main = () => {
         />
         <RouteOff size={44} cursor={"pointer"} />
       </div>
+
+      {/* BOSS GRID DISPLAY */}
       <div className="mb-10 px-24 pt-8">
         <BossGrid />
       </div>
