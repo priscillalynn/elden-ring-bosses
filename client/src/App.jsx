@@ -1,25 +1,34 @@
-import { useRoutes } from "react-router-dom";
+import { useRoutes, Routes, Route } from "react-router-dom";
+import BossDetails from "./pages/BossDetails";
+import Home from "./pages/Home";
 import PageNotFound from "./pages/PageNotFound";
 import Header from "./components/Header";
 import Main from "./components/Main";
 import Footer from "./components/Footer";
 import "./styles/index.css";
 import "./styles/App.css";
-import BossDetails from "./components/BossDetails";
 
 function App() {
+  /*
   const element = useRoutes([
     {
-      path: "*",
-      element: <PageNotFound />,
+      path: "/",
+      element: <Home />,
     },
     {
       path: "/BossDetails",
       element: <BossDetails />,
-    }
+    },
+    {
+      path: "/*",
+      element: <PageNotFound />,
+    },
   ]);
+  */
+
 
   return (
+    /*
     <>
     <Header />
 
@@ -27,6 +36,12 @@ function App() {
 
     <Footer />
     </>
+    */
+   <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/BossDetails" element={<BossDetails />} />
+      <Route path="/*" element={<PageNotFound />} />
+   </Routes>
   )
 }
 
