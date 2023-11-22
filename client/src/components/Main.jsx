@@ -12,7 +12,7 @@ const Main = () => {
       <div className="flex gap-3 mx-20 sm:w-1/2 p-4 mt-8 rounded-xl">
         <Select label="Boss Type" className="max-w-xs" size="sm">
           {bossTypes.map((boss) => (
-            <SelectItem>{boss}</SelectItem>
+            <SelectItem key={boss}>{boss}</SelectItem>
           ))}
         </Select>
         <Input
