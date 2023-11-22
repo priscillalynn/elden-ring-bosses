@@ -2,8 +2,8 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { Card, CardHeader, CardBody, Image } from "@nextui-org/react";
 import React, { useState, useEffect } from "react";
+import BossesAPI from "../services/BossesAPI";
 import axios from "axios";
-
 
 const BossDetails = ({ bossId }) => {
   const [boss, setBoss] = useState([]);
@@ -12,49 +12,62 @@ const BossDetails = ({ bossId }) => {
   useEffect(() => {
     const fetchBossData = async () => {
       try {
-        const response = await fetch(`/bosses/${boss.id}`);
-        const data = await response.json();
-        setBoss(data);
+        const response = await axios.get(`/bosses/${boss}/3`);
+        //const response = await axios.get('/bosses/3');
+
+        //const response = await axios.get(`/bosses/${bossId}`);
+        console.log("API Response:", response.data);
+        console.log("bossId:", bossId);
+
+        setBoss(response.data);
       } catch (error) {
-        console.error("Error fetching boss data:", error);
+        console.error("Error fetching boss data:", error.response);
       }
     };
 
     fetchBossData();
-  }, []);
+  }, [bossId]);
   */
- useEffect(() => {
-   const fetchBossData = async () => {
-     try {
-       const response = await axios.get(`/bosses/${bossId}`);
-       setBoss(response.data);
-     } catch (error) {
-       console.error("Error fetching boss data:", error);
-     }
-   };
 
-   fetchBossData();
- }, [bossId]);
+   useEffect(() => {
+  const fetchBossData = async () => {
+    try {
+      if (!bossId) {
+        console.error("Boss ID is undefined");
+        return;
+      }
+
+      const response = await axios.get(`/bosses/${bossId}`);
+      console.log("API Response:", response.data);
+      setBoss(response.data);
+    } catch (error) {
+      console.error("Error fetching boss data:", error);
+    }
+  };
+
+  fetchBossData();
+}, [bossId]);
+
 
   return (
     <>
       <Header />
 
       <div className="flex justify-center items-center m-10">
-        {boss ? (
+        {Object.keys(boss).length > 0 ? (
           <Card className="py-4 max-w-md mx-4 my-8">
             <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
-              <h1 className="uppercase text-lg font-bold">{boss.name}</h1>
-              <md className="text-default-500">Health: {boss.health}</md>
-              <md className="text-default-500">Defense: {boss.defense}</md>
-              <md className="text-default-500">Type: {boss.type}</md>
-              <md className="text-default-500">Lore: {boss.lore}</md>
+              <h1 className="uppercase text-lg font-bold">Name: {boss?.name}</h1>
+              <p className="text-default-500">Health: {boss?.health}</p>
+              <p className="text-default-500">Defense: {boss?.defense}</p>
+              <p className="text-default-500">Type: {boss?.type}</p>
+              <p className="text-default-500">Lore: {boss?.lore}</p>
             </CardHeader>
             <CardBody className="overflow-visible py-2">
               <Image
                 alt="Card background"
                 className="object-cover rounded-xl"
-                src="https://64.media.tumblr.com/272d6803b73c717a27102cca216ace13/266ebc8889fe46d6-52/s540x810/1a1f8273934f4e5a318424b2c89417ef625393ff.gif"
+                src={boss?.image}
                 width={270}
               />
               <p>Strategic Insights: </p>
