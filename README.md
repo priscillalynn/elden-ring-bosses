@@ -4,7 +4,7 @@ Submitted by: **Priscilla Colon**
 
 About this web app: **This website displays data showing information on Elden Ring bosses.**
 
-Time spent: **15** hours
+Time spent: **20** hours
 
 ## Screenshot (WIP)
 <img width="1371" alt="Screenshot 2023-11-19 at 7 49 34 PM" src="https://github.com/priscillalynn/elden-ring-bosses/assets/85073401/4f29c5bc-e10d-4ada-8685-5701b7a71095">
