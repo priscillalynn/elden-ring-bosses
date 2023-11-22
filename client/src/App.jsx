@@ -2,9 +2,11 @@ import { useRoutes, Routes, Route } from "react-router-dom";
 import BossDetails from "./pages/BossDetails";
 import Home from "./pages/Home";
 import PageNotFound from "./pages/PageNotFound";
+/*
 import Header from "./components/Header";
 import Main from "./components/Main";
 import Footer from "./components/Footer";
+*/
 import "./styles/index.css";
 import "./styles/App.css";
 
@@ -39,7 +41,7 @@ function App() {
     */
    <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/BossDetails" element={<BossDetails />} />
+      <Route path="/bossdetails/:bossId" element={<BossDetails />} />
       <Route path="/*" element={<PageNotFound />} />
    </Routes>
   )
