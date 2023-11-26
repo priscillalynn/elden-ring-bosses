@@ -6,7 +6,7 @@ const bosses = [
     defense: "103",
     type: "optional",
     image:
-      "https://64.media.tumblr.com/1720b685c0b978ee21f9e63d86016baf/cd7eb51e936ba020-4e/s1280x1920/d5acac8438c19a7b638a9aa846a0c23b6f834814.gifv",
+      "https://64.media.tumblr.com/52d8917c8b4a1c9f96afabf1efd163ef/baec100cc93c8ebd-90/s540x810/ebef968426b69ad839898de3265bddc0520724d7.gif",
     lore: "Margit is an Omen who gained notoriety during The Shattering, in which he slaughtered countless champions who harbored ambitions for Lordship, stacking high their corpses during the Second Defense of Leyndell.",
   },
   {

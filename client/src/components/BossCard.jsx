@@ -22,7 +22,7 @@ const BossCard = ({ boss }) => {
             variant="flat"
             color="default"
             radius="lg"
-            size="md"
+            size="md"  
           >
             View
           </Button>
