@@ -3,6 +3,7 @@ import Footer from "../components/Footer";
 import { Card, CardHeader, CardBody, Image } from "@nextui-org/react";
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { Button, ButtonGroup } from "@nextui-org/react";
 import {
   Activity,
   ChevronRight,
@@ -89,6 +90,12 @@ const BossDetails = () => {
                 />
               </div>
             </CardBody>
+
+            {/* CARD FOOTER */}
+            <div className="flex justify-center items-center pb-4">
+              <Button color="default" className="m-1">Edit</Button>
+              <Button color="danger" className="m-1">Delete</Button>
+            </div>
           </Card>
         ) : (
           <p>Loading...</p>
