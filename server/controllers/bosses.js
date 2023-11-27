@@ -12,6 +12,7 @@ static getBosses = async (req, res) => {
   }
 };
 
+
 static getBossById = async (req, res) => {
   const { bossId } = req.params;
   console.log("Received boss ID:", bossId);
@@ -32,6 +33,24 @@ static getBossById = async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 };
+
+/*
+static getBossById = async (req, res) => {
+  const { id } = req.params;
+
+  if (!id) {
+    return res.status(400).json({ error: 'Boss ID is undefined.' });
+  }
+
+  try {
+    const results = await pool.query("SELECT * FROM bosses WHERE id = $1", [id]);
+    res.status(200).json(results.rows);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+*/
+
 
 static getBossByName = async (req, res) => {
   const { name } = req.params;
