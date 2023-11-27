@@ -2,52 +2,32 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { Card, CardHeader, CardBody, Image } from "@nextui-org/react";
 import React, { useState, useEffect } from "react";
-import BossesAPI from "../services/BossesAPI";
-import axios from "axios";
+import { useLocation } from "react-router-dom";
 
-const BossDetails = ({ bossId }) => {
-  const [boss, setBoss] = useState([]);
+const BossDetails = () => {
+  const location = useLocation();
 
-  /*
-  useEffect(() => {
-    const fetchBossData = async () => {
-      try {
-        const response = await axios.get(`/bosses/${boss}/3`);
-        //const response = await axios.get('/bosses/3');
+  const [boss, setBoss] = useState({
+    id: 0,
+    name: "",
+    health: "",
+    defense: "",
+    type: "",
+    image: "",
+    lore: "",
+  });
 
-        //const response = await axios.get(`/bosses/${bossId}`);
-        console.log("API Response:", response.data);
-        console.log("bossId:", bossId);
+  const getBossById = async () => {
+    const id = location.pathname.split("/").pop();
 
-        setBoss(response.data);
-      } catch (error) {
-        console.error("Error fetching boss data:", error.response);
-      }
-    };
-
-    fetchBossData();
-  }, [bossId]);
-  */
-
-   useEffect(() => {
-  const fetchBossData = async () => {
-    try {
-      if (!bossId) {
-        console.error("Boss ID is undefined");
-        return;
-      }
-
-      const response = await axios.get(`/bosses/${bossId}`);
-      console.log("API Response:", response.data);
-      setBoss(response.data);
-    } catch (error) {
-      console.error("Error fetching boss data:", error);
-    }
+    const response = await fetch(`/bosses/${id}`);
+    const json = await response.json();
+    setBoss(json);
   };
 
-  fetchBossData();
-}, [bossId]);
-
+  useEffect(() => {
+    getBossById();
+  }, []);
 
   return (
     <>
@@ -57,7 +37,9 @@ const BossDetails = ({ bossId }) => {
         {Object.keys(boss).length > 0 ? (
           <Card className="py-4 max-w-md mx-4 my-8">
             <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
-              <h1 className="uppercase text-lg font-bold">Name: {boss?.name}</h1>
+              <h1 className="uppercase text-lg font-bold">
+                Name: {boss?.name}
+              </h1>
               <p className="text-default-500">Health: {boss?.health}</p>
               <p className="text-default-500">Defense: {boss?.defense}</p>
               <p className="text-default-500">Type: {boss?.type}</p>
