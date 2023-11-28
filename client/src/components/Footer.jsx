@@ -1,4 +1,5 @@
 import { Link } from "@nextui-org/react";
+import { Swords } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -12,7 +13,7 @@ const Footer = () => {
           underline="hover"
           className="text-sm"
         >
-          Priscilla Colon.
+          Priscilla Colon<Swords size={15} />
         </Link>
       </p>
     </div>
