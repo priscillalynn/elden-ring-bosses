@@ -1,7 +1,8 @@
 import BossGrid from "./BossGrid";
-import { Input, Select, SelectItem } from "@nextui-org/react";
-import { RouteOff, Search } from "lucide-react";
+import { Button, Input, Select, SelectItem } from "@nextui-org/react";
+import { PlusCircle, RouteOff, Search } from "lucide-react";
 import { useQuery, useQueryClient } from "react-query";
+
 
 /* FILTERS */
 const Main = () => {
@@ -25,6 +26,11 @@ const Main = () => {
           startContent={<Search size={20} />}
         />
         <RouteOff size={44} cursor={"pointer"} />
+        
+        {/* ADD BOSS */}
+        <Button color="default" endContent={<PlusCircle />}>
+          ADD
+        </Button>{" "}
       </div>
 
       {/* BOSS GRID DISPLAY */}
