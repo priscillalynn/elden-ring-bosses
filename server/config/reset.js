@@ -10,10 +10,14 @@ const createBossesTable = async () => {
             id SERIAL PRIMARY KEY,
             name VARCHAR(255) NOT NULL,
             health VARCHAR(255) NOT NULL,
-            defense VARCHAR(255) NOT NULL,
+            defense INT NOT NULL,
             type VARCHAR(255) NOT NULL,
             image VARCHAR(255) NOT NULL,
             lore TEXT NOT NULL
+            location VARCHAR(255) NOT NULL,
+            level INT NOT NULL,
+            insight VARCHAR(255) NOT NULL,
+            reward VARCHAR(255) NOT NULL
         )
     `;
 
@@ -30,7 +34,7 @@ const seedBossesTable = async () => {
 
   bosses.forEach((boss) => {
     const insertQuery = {
-      text: "INSERT INTO bosses (name, health, defense, type, image, lore) VALUES ($1, $2, $3, $4, $5, $6)",
+      text: "INSERT INTO bosses (name, health, defense, type, image, lore, location, level, insight, reward) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)",
     };
 
     const values = [
@@ -40,6 +44,10 @@ const seedBossesTable = async () => {
       boss.type,
       boss.image,
       boss.lore,
+      boss.location,
+      boss.level,
+      boss.insight,
+      boss.reward
     ];
 
     pool.query(insertQuery, values, (err, res) => {

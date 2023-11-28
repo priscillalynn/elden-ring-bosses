@@ -51,7 +51,6 @@ static getBossById = async (req, res) => {
 };
 */
 
-
 static getBossByName = async (req, res) => {
   const { name } = req.params;
   try {
@@ -65,12 +64,12 @@ static getBossByName = async (req, res) => {
 };
 
 static createBoss = async (req, res) => {
-  const { name, health, defense, type, image, lore } = req.body;
+  const { name, health, defense, type, image, lore, location, level, insight, reward } = req.body;
 
   try {
     const results = await pool.query(
-      "INSERT INTO bosses (name, health, defense, type, image, lore) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *",
-      [name, health, defense, type, image, lore]
+      "INSERT INTO bosses (name, health, defense, type, image, lore, location, level, insight, reward) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING *",
+      [name, health, defense, type, image, lore, location, level, insight, reward]
     );
     res.status(201).json(results.rows);
   } catch (error) {
@@ -80,12 +79,12 @@ static createBoss = async (req, res) => {
 
 static updateBoss = async (req, res) => {
   const { bossId } = req.params;
-  const { name, health, defense, type, image, lore } = req.body;
+  const { name, health, defense, type, image, lore, location, level, insight, reward } = req.body;
 
   try {
     const results = await pool.query(
-      "UPDATE bosses SET name = $1, health = $2, defense = $3, type = $4, image = $5, lore = $6 WHERE id = $7 RETURNING *",
-      [name, health, defense, type, image, lore, bossId]
+      "UPDATE bosses SET name = $1, health = $2, defense = $3, type = $4, image = $5, lore = $6, location = $7, level = $8, insight = $9, reward = $10 WHERE id = $11 RETURNING *",
+      [name, health, defense, type, image, lore, location, level, insight, reward, bossId]
     );
     res.status(200).json(results.rows);
   } catch (error) {

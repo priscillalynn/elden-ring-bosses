@@ -5,7 +5,7 @@ class BossModel {
     const selectQuery = `
         SELECT *
         FROM bosses
-        ORDER BY name, health, defense, type, image, lore;
+        ORDER BY name, health, defense, type, image, lore, location, level, insight, reward;
     `;
 
     const results = await pool.query(selectQuery);
@@ -52,7 +52,11 @@ class BossModel {
       defense,
       type,
       image,
-      lore
+      lore,
+      location,
+      level,
+      insight,
+      reward
     } = bosses;
 
     const insertQuery = `
@@ -62,9 +66,13 @@ class BossModel {
           defense,
           type,
           image,
-          lore
+          lore,
+          location,
+          level,
+          insight,
+          reward
         )
-        VALUES ($1, $2, $3, $4, $5, $6)
+        VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)
         RETURNING *;
     `;
 
@@ -74,14 +82,18 @@ class BossModel {
       defense,
       type,
       image,
-      lore
+      lore,
+      location,
+      level,
+      insight,
+      reward
     ]);
 
     return results.rows[0];
   };
 
   static updateOne = async (bossId, bosses) => {
-    const { name, health, defense, type, image, lore } = bosses;
+    const { name, health, defense, type, image, lore, location, level, insight, reward } = bosses;
 
     const updateQuery = `
         UPDATE bosses
@@ -91,7 +103,11 @@ class BossModel {
             type = $4,
             image = $5,
             lore = $6
-        WHERE id = $7
+            location = $7,
+            level = $8,
+            insight = $9,
+            reward = $10
+        WHERE id = $11
         RETURNING *;
     `;
 
@@ -101,7 +117,11 @@ class BossModel {
       defense,
       type,
       image,
-      lore
+      lore,
+      location,
+      level,
+      insight,
+      reward
     ]);
 
     return results.rows[0];
