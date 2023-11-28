@@ -13,7 +13,7 @@ const createBossesTable = async () => {
             defense INT NOT NULL,
             type VARCHAR(255) NOT NULL,
             image VARCHAR(255) NOT NULL,
-            lore TEXT NOT NULL
+            lore TEXT NOT NULL,
             location VARCHAR(255) NOT NULL,
             level INT NOT NULL,
             insight VARCHAR(255) NOT NULL,
