@@ -3,7 +3,7 @@ import Footer from "../components/Footer";
 import { Card, CardHeader, CardBody, Image } from "@nextui-org/react";
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import { Button, ButtonGroup } from "@nextui-org/react";
+import { Button } from "@nextui-org/react";
 import {
   Activity,
   ChevronRight,
@@ -25,6 +25,10 @@ const BossDetails = () => {
     type: "",
     image: "",
     lore: "",
+    location: "",
+    level: "",
+    insight: "",
+    reward: "",
   });
 
   const getBossById = async () => {
@@ -66,19 +70,10 @@ const BossDetails = () => {
                 <InfoItem icon={<Activity />} text={boss?.health} />
                 <InfoItem icon={<Shield />} text={boss?.defense} />
                 <InfoItem icon={<ChevronRight />} text={boss?.type} />
-                <InfoItem icon={<Map />} text="ADD LOCATION TO DB" />
-                <InfoItem
-                  icon={<Swords />}
-                  text="ADD SUGGESTED LEVEL B4 FIGHT TO DB (level)"
-                />
-                <InfoItem
-                  icon={<Target />}
-                  text="ADD STRATEGIC INSIGHTS TO BEAT BOSS DB (items needed, tips, etc)"
-                />
-                <InfoItem
-                  icon={<Gem />}
-                  text="ADD REWARD WHEN BEATING BOSS TO DB (reward)"
-                />
+                <InfoItem icon={<Map />} text={boss?.location} />
+                <InfoItem icon={<Swords />} text={boss?.level} />
+                <InfoItem icon={<Target />} text={boss?.insight} />
+                <InfoItem icon={<Gem />} text={boss?.reward} />
               </div>
 
               <div className="flex justify-center items-center">
@@ -93,8 +88,12 @@ const BossDetails = () => {
 
             {/* CARD FOOTER */}
             <div className="flex justify-center items-center pb-4">
-              <Button color="default" className="m-1">Edit</Button>
-              <Button color="danger" className="m-1">Delete</Button>
+              <Button color="default" className="m-1">
+                Edit
+              </Button>
+              <Button color="danger" className="m-1">
+                Delete
+              </Button>
             </div>
           </Card>
         ) : (
