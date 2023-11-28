@@ -6,11 +6,11 @@ import { useQuery, useQueryClient } from "react-query";
 
 /* FILTERS */
 const Main = () => {
-  const bossTypes = ["All", "Major", "Minor"];
+  const bossTypes = ["All", "Required", "Optional"];
 
   return (
     <>
-      <div className="flex gap-3 mx-20 sm:w-1/2 p-4 mt-8 rounded-xl">
+      <div className="flex gap-3 mx-20 p-4 mt-8 rounded-xl">
         <Select label="Boss Type" className="max-w-xs" size="sm">
           {bossTypes.map((boss) => (
             <SelectItem key={boss}>{boss}</SelectItem>
@@ -26,7 +26,7 @@ const Main = () => {
           startContent={<Search size={20} />}
         />
         <RouteOff size={44} cursor={"pointer"} />
-        
+
         {/* ADD BOSS */}
         <Button color="default" endContent={<PlusCircle />}>
           ADD
