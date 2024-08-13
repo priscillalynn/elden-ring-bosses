@@ -42,11 +42,11 @@ The following **additional** features are implemented:
 Here's a walkthrough of implemented required features:
 
 project 1
-<img src='https://imgur.com/a/HypAcQN' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-![1](https://github.com/priscillalynn/elden-ring-bosses/assets/85073401/70e67dc1-80f3-4db3-a393-238f58796689)
+<!-- <img src='https://imgur.com/a/HypAcQN' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+![1](https://github.com/priscillalynn/elden-ring-bosses/assets/85073401/70e67dc1-80f3-4db3-a393-238f58796689) -->
 
 project 2: update
-![project2](https://github.com/priscillalynn/elden-ring-bosses/assets/85073401/c8da0efa-22dd-4519-8256-02521bb1746a)
+<!-- ![project2](https://github.com/priscillalynn/elden-ring-bosses/assets/85073401/c8da0efa-22dd-4519-8256-02521bb1746a) -->
 
 
 <!-- Replace this with whatever GIF tool you used! -->
